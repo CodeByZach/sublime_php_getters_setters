@@ -41,7 +41,7 @@ Usage Instruction:
          * @var AbcClass
          */
         private $foo;
-    
+
         /**
          * Gets the foo container.
          *
@@ -51,7 +51,7 @@ Usage Instruction:
         {
             return $this->foo;
         }
-    
+
         /**
          * Sets the foo container.
          *
@@ -60,7 +60,7 @@ Usage Instruction:
         private function _setFoo(AbcClass $foo)
         {
             $this->foo = $foo;
-            
+
             return $this;
         }
     }
@@ -133,7 +133,7 @@ Creating your own template
 class myTemplate(object):
     name = "myTemplate"
     style = 'camelCase' # can also be snakeCase
-    getter = """ 
+    getter = """
     /**
     * Gets the %(description)s.
     *
@@ -145,7 +145,7 @@ class myTemplate(object):
     }
 """
 
-    setter = """ 
+    setter = """
     /**
     * Sets the %(description)s.
     *
@@ -170,4 +170,4 @@ class myTemplate(object):
     "template" : "myTemplate",
   ```
  * restart sublime to use the new template
-  
+

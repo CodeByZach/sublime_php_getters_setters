@@ -1,47 +1,68 @@
 [
-    {
-        "id": "tools",
-        "caption": "Tools",
-        "children":
-        [
-            {
-                "caption": "PHP Getters and Setters...",
-                "command": "show_overlay",
-                "args": {"overlay": "command_palette", "text": "PHP: Generate" }
-            }
-        ]
-    },
-    {
-        "caption": "Preferences",
-        "mnemonic": "n",
-        "id": "preferences",
-        "children":
-        [
-            {
-                "caption": "Package Settings",
-                "mnemonic": "P",
-                "id": "package-settings",
-                "children":
-                [
-                    {
-                        "caption": "PHP Getters and Setters",
-                        "children":
-                        [
-                            {
-                                "command": "open_file",
-                                "args": {"file": "${packages}/PHP Getters and Setters/php-getters-setters.sublime-settings"},
-                                "caption": "Settings – Default"
-                            },
-                            {
-                                "command": "open_file",
-                                "args": {"file": "${packages}/User/php-getters-setters.sublime-settings"},
-                                "caption": "Settings – User"
-                            }
-
-                        ]
-                    }
-                ]
-            }
-        ]
-    }
+	{
+		"caption": "Tools",
+		"mnemonic": "T",
+		"id": "tools",
+		"children":
+		[
+			{
+				"id": "packages",
+				"caption": "Packages",
+				"children":
+				[
+					{
+						"caption": "Getters and Setters",
+						"children":
+						[
+							{ "command": "php_generate_getter_for", "caption": "Generate Getter for ..." },
+							{ "command": "php_generate_setter_for", "caption": "Generate Setter for ..." },
+							{ "command": "php_generate_getter_setter_for", "caption": "Generate Getter and Setter for ..." },
+							{ "caption" : "-" },
+							{ "command": "php_generate_getters_setters", "caption": "Generate All" },
+							{ "command": "php_generate_getters", "caption": "Generate Getters" },
+							{ "command": "php_generate_setters", "caption": "Generate setters" },
+							{ "command": "php_generate_getters_setter_unavailable", "caption": "" }
+						]
+					}
+				]
+			}
+		]
+	},
+	{
+		"caption": "Preferences",
+		"mnemonic": "n",
+		"id": "preferences",
+		"children":
+		[
+			{
+				"caption": "Package Settings",
+				"mnemonic": "P",
+				"id": "package-settings",
+				"children":
+				[
+					{
+						"caption": "PHP Getters and Setters",
+						"children":
+						[
+							{
+								"caption": "Settings",
+								"command": "edit_settings", "args": {
+									"base_file": "${packages}/PHPGettersSetters/Minify.sublime-settings",
+									"default": "{\n$0\n}\n"
+								}
+							},
+							{ "caption": "-" },
+							{
+								"caption": "README",
+								"command": "open_file", "args":
+								{
+									"file": "${packages}/PHPGettersSetters/README.md"
+								}
+							}
+						]
+					}
+				]
+			}
+		]
+	}
 ]
