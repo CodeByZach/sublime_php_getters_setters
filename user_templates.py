@@ -1,7 +1,7 @@
 print('==== USER TEMPLATES ===')
 
 class myCamelCase(object):
-	tname = "myCamelCase"
+	name = "myCamelCase"
 	style = 'camelCase'
 	getter = """
 	/**
