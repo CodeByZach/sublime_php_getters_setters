@@ -11,7 +11,7 @@
 				"children":
 				[
 					{
-						"caption": "Getters and Setters",
+						"caption": "PHP Getters and Setters",
 						"children":
 						[
 							{ "command": "php_generate_getter_for", "caption": "Generate Getter for ..." },

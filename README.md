@@ -2,15 +2,15 @@ PHP Getters and Setters
 =======================
 
 
-With PHP Getters and Setters you can automatically generate _Getters_ and _Setters_ for your php classes.
+With PHP Getters and Setters you can automatically generate _Getters_ and _Setters_ for your PHP classes.
 
 Features:
 ---------
 
-* Generate Getters, Setters or Both
-* Can be applied to all class properties or just to a single one
-* Description, Type and Type Hinting automatically discovered from the variable docblock
-* fully customizable templates
+* Generate Getters, Setters or Both.
+* Can be applied to all class properties or just to a single one.
+* Description, Type and Type Hinting automatically discovered from the variable docblock.
+* Fully customizable templates.
 
 Usage Instruction:
 ------------------
@@ -29,7 +29,7 @@ Usage Instruction:
     }
     ```
 
-2. Go to Tools -> PHP Getters and Setter
+2. Go to Tools -> PHP Getters and Setters
 3. Getter and Setter will be generated:
 
     ```php
@@ -66,7 +66,7 @@ Usage Instruction:
     }
     ```
 
-As you can see if get to trouble of commenting your variables, the generated functions can be used without modification.
+As you can see, it saves you the trouble of having to comment your variables.
 
 This is an huge time saver!
 
@@ -91,35 +91,37 @@ _type_    : **boolean**
 
 _default_ : **false**
 
-_description_: ignore visibilty for setters generation
+_description_: Ignore visibilty for setters generation.
 
 ###registerTemplates
 _type_   : **array**
 
 _default_: **[]**
 
-_description_: the user templates to load
+_description_: The user templates to load.
 
 ###template
 _type_   : **string**
 
-_default_: **camelCaseFluent**
+_built-in options_ : **PSR2, camelCase, camelCaseFluent, snakeCase, snakeCaseFluent**
 
-_description_: the template to use
+_default_: **PSR2**
+
+_description_: The template to use.
 
 ### type_hint_ignore
 _type_: **list of strings**
 
-_default_: **["mixed", "int","integer", "double", "float", "number", "string", "boolean", "bool", "numeric", "unknown"]**
+_default_: **["mixed", "int", "integer", "double", "float", "number", "string", "boolean", "bool", "numeric", "unknown"]**
 
-_description_: if the property has one of the types listed type hinting will not be used
+_description_: If the property has one of the types listed type hinting will not be used.
 
 ### setter_before_getter
 _type_: **boolean**
 
 _default_: **false**
 
-_description_: Set to true to generate setter code before getters
+_description_: Set to true to generate setter code before getters.
 
 Creating your own template
 --------------------------
@@ -139,7 +141,7 @@ class myTemplate(object):
     *
     * @return %(type)s
     */
-    public function get%(normalizedName)s()
+    public function %(getterPrefix)s%(normalizedName)s()
     {
         return $this->%(name)s;
     }
@@ -149,13 +151,13 @@ class myTemplate(object):
     /**
     * Sets the %(description)s.
     *
-    * @param %(type)s $%(name)s the %(humanName)s
+    * @param %(type)s $%(param)s
     *
     * @return self
     */
-    public function set%(normalizedName)s(%(typeHint)s $%(name)s)
+    %(visibility)s function %(visibilityPrefix)s%(setterPrefix)s%(normalizedName)s(%(typeHint)s $%(param)s)
     {
-        $this->%(name)s = $%(name)s;
+        $this->%(name)s = $%(param)s;
     }
 """
   ```
@@ -170,4 +172,3 @@ class myTemplate(object):
     "template" : "myTemplate",
   ```
  * restart sublime to use the new template
-

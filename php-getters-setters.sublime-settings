@@ -1,10 +1,16 @@
 {
-    // user defined templates to load
-    "registerTemplates": [],
+	// Ignore visibilty for setters generation.
+	"ignore_visibility": false,
 
-    // the template used to generate code
-    "template": "PSR2",
+	// Additional user templates to load.
+	"registerTemplates": [],
 
-    // if docblock says variable id any of the following do not add type hinting to functions
-    "type_hint_ignore": ["mixed", "int", "integer", "double", "float", "number", "string", "boolean", "bool", "numeric", "unknown"],
+	// The template to use.
+	"template": "PSR2",
+
+	// If docblock says variable id any of the following do not add type hinting to functions.
+	"type_hint_ignore": ["mixed", "int", "integer", "double", "float", "number", "string", "boolean", "bool", "numeric", "unknown"],
+
+	// Set to true to generate setter code before getters.
+	"setter_before_getter": false
 }
