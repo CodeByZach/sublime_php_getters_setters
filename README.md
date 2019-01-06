@@ -93,12 +93,26 @@ _default_ : **false**
 
 _description_: Ignore visibilty for setters generation.
 
+### setter_before_getter
+_type_: **boolean**
+
+_default_: **false**
+
+_description_: Set to true to generate Setters before Getters.
+
+### type_hint_ignore
+_type_: **list of strings**
+
+_default_: **["mixed", "int", "integer", "double", "float", "number", "string", "boolean", "bool", "numeric", "unknown"]**
+
+_description_: Should a variable type matche any of the following, do not use it for type hinting.
+
 ###registerTemplates
 _type_   : **array**
 
 _default_: **[]**
 
-_description_: The user templates to load.
+_description_: Additional user templates to load.
 
 ###template
 _type_   : **string**
@@ -107,21 +121,7 @@ _built-in options_ : **PSR2, camelCase, camelCaseFluent, snakeCase, snakeCaseFlu
 
 _default_: **PSR2**
 
-_description_: The template to use.
-
-### type_hint_ignore
-_type_: **list of strings**
-
-_default_: **["mixed", "int", "integer", "double", "float", "number", "string", "boolean", "bool", "numeric", "unknown"]**
-
-_description_: If the property has one of the types listed type hinting will not be used.
-
-### setter_before_getter
-_type_: **boolean**
-
-_default_: **false**
-
-_description_: Set to true to generate setter code before getters.
+_description_: The selected template.
 
 Creating your own template
 --------------------------

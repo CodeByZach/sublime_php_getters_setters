@@ -15,7 +15,7 @@ class myCamelCase(object):
 
 	setter = """
 	/**
-	 * Sets $%(name)s.
+	 * Sets $%(name)s
 	 * @param %(type)s $%(param)s
 	 */
 	%(visibility)s function %(visibilityPrefix)s%(setterPrefix)s%(normalizedName)s(%(typeHint)s $%(param)s) {

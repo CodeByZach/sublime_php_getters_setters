@@ -191,7 +191,7 @@ class Variable(object):
 
 		if self.type.find(" ") > -1 or self.type.find("|") > -1:
 			msg("'%s' is more than one type, switching to no type hint" % self.type)
-			return ""
+			return ''
 
 		return self.type
 
