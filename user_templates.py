@@ -1,4 +1,4 @@
-print('==== USER TEMPLATES ===')
+# User templates
 
 class myCamelCase(object):
 	name = "myCamelCase"

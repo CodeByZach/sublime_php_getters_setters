@@ -2,15 +2,15 @@
 	// Ignore visibilty for setters generation.
 	"ignore_visibility": false,
 
-	// Additional user templates to load.
-	"registerTemplates": [],
-
-	// The template to use.
-	"template": "PSR2",
+	// Set to true to generate setter code before getters.
+	"setter_before_getter": false,
 
 	// If docblock says variable id any of the following do not add type hinting to functions.
 	"type_hint_ignore": ["mixed", "int", "integer", "double", "float", "number", "string", "boolean", "bool", "numeric", "unknown"],
 
-	// Set to true to generate setter code before getters.
-	"setter_before_getter": false
+	// Additional user templates to load.
+	"registerTemplates": [],
+
+	// The template to use.
+	"template": "PSR2"
 }

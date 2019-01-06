@@ -10,6 +10,7 @@ import sublime_plugin
 # )
 from .user_templates import *
 
+print('==== PHP Getters and Setters ====')
 
 def msg(msg):
 	print ("[PHP Getters and Setters] %s" % msg)
@@ -34,20 +35,20 @@ class Prefs:
 
 		settings = sublime.load_settings('php-getters-setters.sublime-settings')
 
-		self.data['typeHintIgnore'] = settings.get('type_hint_ignore')
-		msg("ignored type hinting var types %s" % self.data['typeHintIgnore'])
-
-		self.data['template'] = settings.get('template')
-		msg("template is  '%s'" % self.data['template'])
-
-		self.data['registerTemplates'] = settings.get('registerTemplates', [])
-		msg("register extra user templates %s" % self.data['registerTemplates'])
-
 		self.data['ignoreVisibility'] = settings.get('ignore_visibility', [])
-		msg("ignoring visibility to getters and setters")
+		msg("Using visibilty in Getter and Setter generation turned %s." % ("ON" if not self.data['ignoreVisibility'] else "OFF"))
 
 		self.setterBeforeGetter = settings.get('setter_before_getter', False)
-		msg("setterBeforeGetter is %s" % str(self.setterBeforeGetter))
+		msg("Getters will come %s Setters." % ("BEFORE" if self.setterBeforeGetter else "AFTER"))
+
+		self.data['typeHintIgnore'] = settings.get('type_hint_ignore')
+		msg("Will ignore type hinting for the following types: %s." % self.data['typeHintIgnore'])
+
+		self.data['registerTemplates'] = settings.get('registerTemplates', [])
+		msg("Will register the following user-defined templates: %s." % self.data['registerTemplates'])
+
+		self.data['template'] = settings.get('template')
+		msg("Template is set to: '%s'." % self.data['template'])
 
 		self.loaded = True
 
