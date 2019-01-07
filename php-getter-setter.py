@@ -36,7 +36,7 @@ class Prefs:
 		settings = sublime.load_settings('php-getters-setters.sublime-settings')
 
 		self.data['ignoreVisibility'] = settings.get('ignore_visibility', [])
-		msg("[Settings] Using visibilty in Getter and Setter generation turned %s." % ("ON" if not self.data['ignoreVisibility'] else "OFF"))
+		msg("[Settings] Use of visibilty in Getter and Setter generation turned %s." % ("ON" if not self.data['ignoreVisibility'] else "OFF"))
 
 		self.setterBeforeGetter = settings.get('setter_before_getter', False)
 		msg("[Settings] Getters will come %s Setters." % ("BEFORE" if self.setterBeforeGetter else "AFTER"))
@@ -185,15 +185,28 @@ class Variable(object):
 	def getType(self):
 		return self.type
 
+	def isTypeOfficial(self):
+		varType = self.getType()
+
+		return varType in ["self","array","callable","bool","float","int","string","iterable","object"]
+
 	def getTypeHint(self):
-		if self.type in self.Prefs.get('typeHintIgnore'):
+		varType = self.getType()
+		ignoreTypes = self.Prefs.get('typeHintIgnore')
+
+		if varType == 'mixed':
+			return ''
+		elif self.isTypeOfficial():
+			if varType in ignoreTypes:
+				return ''
+		elif 'unknown' in ignoreTypes:
 			return ''
 
-		if self.type.find(" ") > -1 or self.type.find("|") > -1:
-			msg("'%s' is more than one type, switching to no type hint" % self.type)
+		if varType.find(" ") > -1 or varType.find("|") > -1:
+			msg("'%s' is more than one type, switching to no type hint" % varType)
 			return ''
 
-		return self.type
+		return varType
 
 
 class DocBlock(object):

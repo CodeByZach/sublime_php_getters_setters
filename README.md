@@ -103,9 +103,11 @@ _description_: Set to true to generate Setters before Getters.
 ### type_hint_ignore
 _type_: **list of strings**
 
-_default_: **["mixed", "int", "integer", "double", "float", "number", "string", "boolean", "bool", "numeric", "unknown"]**
+_ignorable types_ : **["unknown", "self", "array", "callable", "bool", "float", "int", "string", "iterable", "object"]**
 
-_description_: Should a variable type matche any of the following, do not use it for type hinting.
+_default_: **[]**
+
+_description_: Should a variable type match any of the following, it will NOT be used for type hinting. (The **"unknown"** option is a wild-card)
 
 ###registerTemplates
 _type_   : **array**
@@ -169,6 +171,6 @@ class myTemplate(object):
     "registerTemplates" : [ "myTemplate" ],
 
     // the template used to generate code
-    "template" : "myTemplate",
+    "template" : "myTemplate"
   ```
  * restart sublime to use the new template

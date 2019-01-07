@@ -5,13 +5,30 @@
 	// Set to true to generate Setters before Getters.
 	"setter_before_getter": false,
 
-	// Should a variable type matche any of the following, do not use it for type hinting.
-	// "mixed", "int", "integer", "double", "float", "number", "string", "boolean", "bool", "numeric", "unknown"
-	"type_hint_ignore": ["mixed", "int", "integer", "double", "float", "number", "string", "boolean", "bool", "numeric", "unknown"],
+	/**
+	 * Should a variable type match any of the following, it will NOT be used for type hinting.
+	 * (mixed = Type not specified/omitted.)
+	 *
+	 * OPTIONS:
+	 *  --------------------------------------------------------------------
+	 *   unknown --> ANY TYPE that is not listed below (ex. custom classes):
+	 *  --------------------------------------------------------------------
+	 *   self -----> The parameter must be an instanceof the same class as the one the method is defined on. This can only be used on class and instance methods.
+	 *   array ----> The parameter must be an array.
+	 *   callable -> The parameter must be a valid callable.
+	 *   bool -----> The parameter must be a boolean value.
+	 *   float ----> The parameter must be a floating point number.
+	 *   int ------> The parameter must be an integer.
+	 *   string ---> The parameter must be a string.
+	 *   iterable -> The parameter must be either an array or an instanceof Traversable.
+	 *   object ---> The parameter must be an object.
+	 */
+	"type_hint_ignore": [],
 
 	// Additional user templates to load.
 	"registerTemplates": [],
 
-	// The selected template. (PSR2, camelCase, camelCaseFluent, snakeCase, snakeCaseFluent)
+	// The selected template.
+	// (PSR2, camelCase, camelCaseFluent, snakeCase, snakeCaseFluent)
 	"template": "PSR2"
 }
