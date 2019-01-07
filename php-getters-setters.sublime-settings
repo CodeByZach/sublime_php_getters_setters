@@ -26,7 +26,7 @@
 	"type_hint_ignore": [],
 
 	// Additional user-defined templates to load.
-	"registerTemplates": [],
+	"register_templates": [],
 
 	// The selected template.
 	// (PSR2, camelCase, camelCaseFluent, snakeCase, snakeCaseFluent)

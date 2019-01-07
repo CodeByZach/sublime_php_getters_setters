@@ -44,7 +44,7 @@ class Prefs:
 		self.data['typeHintIgnore'] = settings.get('type_hint_ignore')
 		msg("[Settings] Will ignore type hinting for the following types: %s." % self.data['typeHintIgnore'])
 
-		self.data['registerTemplates'] = settings.get('registerTemplates', [])
+		self.data['registerTemplates'] = settings.get('register_templates', [])
 		msg("[Settings] Will register the following user-defined templates: %s." % self.data['registerTemplates'])
 
 		self.data['template'] = settings.get('template')

@@ -87,31 +87,31 @@ Settings Reference
 ------------------
 
 **ignore_visibility**
-_type_    : ```boolean```
-_default_ : **false**
-_description_: Ignore visibilty for setters generation.
+<br/>type: `boolean`
+<br/>default: `false`
+<br/>description: Ignore visibilty for setters generation.
 
 **setter_before_getter**
-_type_: ```boolean```
-_default_: ```false```
-_description_: Set to true to generate Setters before Getters.
+<br/>type: `boolean`
+<br/>default: `false`
+<br/>description: Set to true to generate Setters before Getters.
 
 **type_hint_ignore** (requires restart)
-_type_: list of strings
-_ignorable types_ : ```["unknown", "self", "array", "callable", "bool", "float", "int", "string", "iterable", "object"]```
-_default_: ```[]```
-_description_: Should a variable type match any of the following, it will NOT be used for type hinting. (The **"unknown"** option is a wild-card)
+<br/>type: list of strings
+<br/>ignorable types: `["unknown", "self", "array", "callable", "bool", "float", "int", "string", "iterable", "object"]`
+<br/>default: `[]`
+<br/>description: Should a variable type match any of the following, it will NOT be used for type hinting. (The **"unknown"** option is a wild-card)
 
-**registerTemplates** (requires restart)
-_type_   : ```array```
-_default_: ```[]```
-_description_: Additional user-defined templates to load.
+**register_templates** (requires restart)
+<br/>type: `array`
+<br/>default: `[]`
+<br/>description: Additional user-defined templates to load.
 
 **template** (requires restart)
-_type_   : ```string```
-_built-in options_ : ```PSR2, camelCase, camelCaseFluent, snakeCase, snakeCaseFluent```
-_default_: ```PSR2```
-_description_: The selected template.
+<br/>type: `string`
+<br/>built-in options: `"PSR2"`, `"camelCase"`, `"camelCaseFluent"`, `"snakeCase"`, `"snakeCaseFluent"`
+<br/>default: `"PSR2"`
+<br/>description: The selected template.
 
 Creating your own template
 --------------------------
@@ -119,8 +119,8 @@ Creating your own template
 
 [package-dir] is your [package directory](http://docs.sublimetext.info/en/sublime-text-3/basic_concepts.html#the-packages-directory).
 
-* Make a directory called ```[package-dir]/PHP Getters and Setters```.
-* Put the following in a file at ```[package-dir]/PHP Getters and Setters/user_templates.py```.
+1. Make a directory called `[package-dir]/PHP Getters and Setters`.
+2. Put the following in a file at `[package-dir]/PHP Getters and Setters/user_templates.py`.
 ```
 class myTemplate(object):
     name = "myTemplate"
@@ -151,12 +151,12 @@ class myTemplate(object):
     }
 """
 ```
-* Edit the parts between setter and getter how you want.
-* Edit your user settings for this package. On mac OS that's ```Preferences | Package Settings | PHP Getters and Setters | Settings - User```.
-* Add the following settings
+3. Edit the parts between getter and setter how you want.
+4. Edit your user settings for this package. On macOS that's _Preferences > Package Settings > PHP Getters and Setters > Settings - User_.
+5. Add the following settings:
 ```
     // Additional user-defined templates to load.
-    "registerTemplates" : [ "myTemplate" ],
+    "register_templates" : [ "myTemplate" ],
 
     // The selected template.
     "template" : "myTemplate"
