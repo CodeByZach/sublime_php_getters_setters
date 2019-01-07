@@ -17,7 +17,7 @@ Usage Instruction:
 
 1. Generate PHP code
 
-    ```php
+```php
     class test
     {
         /**
@@ -27,12 +27,12 @@ Usage Instruction:
          */
         private $foo;
     }
-    ```
+```
 
 2. Go to Tools -> PHP Getters and Setters
 3. Getter and Setter will be generated:
 
-    ```php
+```php
     class test
     {
         /**
@@ -64,7 +64,7 @@ Usage Instruction:
             return $this;
         }
     }
-    ```
+```
 
 As you can see, it saves you the trouble of having to comment your variables.
 
@@ -86,43 +86,31 @@ These can be accesed via the context menu (right click on the source of any open
 Settings Reference
 ------------------
 
-###ignore_visibility
-_type_    : **boolean**
-
+**ignore_visibility**
+_type_    : ```boolean```
 _default_ : **false**
-
 _description_: Ignore visibilty for setters generation.
 
-### setter_before_getter
-_type_: **boolean**
-
-_default_: **false**
-
+**setter_before_getter**
+_type_: ```boolean```
+_default_: ```false```
 _description_: Set to true to generate Setters before Getters.
 
-### type_hint_ignore
-_type_: **list of strings**
-
-_ignorable types_ : **["unknown", "self", "array", "callable", "bool", "float", "int", "string", "iterable", "object"]**
-
-_default_: **[]**
-
+**type_hint_ignore** (requires restart)
+_type_: list of strings
+_ignorable types_ : ```["unknown", "self", "array", "callable", "bool", "float", "int", "string", "iterable", "object"]```
+_default_: ```[]```
 _description_: Should a variable type match any of the following, it will NOT be used for type hinting. (The **"unknown"** option is a wild-card)
 
-###registerTemplates
-_type_   : **array**
+**registerTemplates** (requires restart)
+_type_   : ```array```
+_default_: ```[]```
+_description_: Additional user-defined templates to load.
 
-_default_: **[]**
-
-_description_: Additional user templates to load.
-
-###template
-_type_   : **string**
-
-_built-in options_ : **PSR2, camelCase, camelCaseFluent, snakeCase, snakeCaseFluent**
-
-_default_: **PSR2**
-
+**template** (requires restart)
+_type_   : ```string```
+_built-in options_ : ```PSR2, camelCase, camelCaseFluent, snakeCase, snakeCaseFluent```
+_default_: ```PSR2```
 _description_: The selected template.
 
 Creating your own template
@@ -133,7 +121,7 @@ Creating your own template
 
 * Make a directory called ```[package-dir]/PHP Getters and Setters```.
 * Put the following in a file at ```[package-dir]/PHP Getters and Setters/user_templates.py```.
-  ```
+```
 class myTemplate(object):
     name = "myTemplate"
     style = 'camelCase' # can also be snakeCase
@@ -162,15 +150,14 @@ class myTemplate(object):
         $this->%(name)s = $%(param)s;
     }
 """
-  ```
+```
 * Edit the parts between setter and getter how you want.
-* Edit your user settings for this package. On OSX that's ```Preferences | Package Settings | PHP Getters and Setters | Settings - User```.
+* Edit your user settings for this package. On mac OS that's ```Preferences | Package Settings | PHP Getters and Setters | Settings - User```.
 * Add the following settings
-  ```
-    // user defined templates to load
+```
+    // Additional user-defined templates to load.
     "registerTemplates" : [ "myTemplate" ],
 
-    // the template used to generate code
+    // The selected template.
     "template" : "myTemplate"
-  ```
- * restart sublime to use the new template
+```

@@ -25,7 +25,7 @@
 	 */
 	"type_hint_ignore": [],
 
-	// Additional user templates to load.
+	// Additional user-defined templates to load.
 	"registerTemplates": [],
 
 	// The selected template.
