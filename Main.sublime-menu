@@ -46,18 +46,28 @@
 						[
 							{
 								"caption": "Settings",
-								"command": "edit_settings", "args": {
+								"command": "edit_settings",
+								"args":
+								{
 									"base_file": "${packages}/PHP Getters and Setters/php-getters-setters.sublime-settings",
 									"default": "{\n$0\n}\n"
+								}
+							},
+							{
+								"caption": "User Templates",
+								"command": "getter_setter_edit_settings",
+								"args":
+								{
+									"base_file": "${packages}/PHP Getters and Setters/user_templates.py",
+									"user_file": "${packages}/User/PHP Getters and Setters/user_templates.py",
+									"default": "# User templates\n\n$0\n"
 								}
 							},
 							{ "caption": "-" },
 							{
 								"caption": "README",
-								"command": "open_file", "args":
-								{
-									"file": "${packages}/PHP Getters and Setters/README.md"
-								}
+								"command": "open_file",
+								"args": { "file": "${packages}/PHP Getters and Setters/README.md" }
 							}
 						]
 					}
