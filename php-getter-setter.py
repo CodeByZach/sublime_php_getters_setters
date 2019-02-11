@@ -33,7 +33,7 @@ class Prefs:
 		if self.loaded:
 			return
 
-		settings = sublime.load_settings('php-getters-setters.sublime-settings')
+		settings = sublime.load_settings('PHP Getters and Setters.sublime-settings')
 
 		self.data['ignoreVisibility'] = settings.get('ignore_visibility', [])
 		msg("[Settings] Use of visibilty in Getter and Setter generation turned %s." % ("ON" if not self.data['ignoreVisibility'] else "OFF"))
