@@ -73,9 +73,9 @@
 										"command": "z_edit_settings",
 										"args":
 										{
-											"file": "${packages}/PHP Getters and Setters/Context.sublime-menu",
 											"is_parent_setting": "1",
-											"contents": "[\n\t$0\n]\n"
+											"base_file": "${packages}/PHP Getters and Setters/Context.sublime-menu",
+											"default": "[\n\t$0\n]\n"
 										}
 									},
 									{
@@ -83,9 +83,9 @@
 										"command": "z_edit_settings",
 										"args":
 										{
-											"file": "${packages}/PHP Getters and Setters/Side Bar.sublime-menu",
 											"is_parent_setting": "1",
-											"contents": "[\n\t$0\n]\n"
+											"base_file": "${packages}/PHP Getters and Setters/Side Bar.sublime-menu",
+											"default": "[\n\t$0\n]\n"
 										}
 									},
 									{
@@ -93,9 +93,9 @@
 										"command": "z_edit_settings",
 										"args":
 										{
-											"file": "${packages}/PHP Getters and Setters/Tab Context.sublime-menu",
 											"is_parent_setting": "1",
-											"contents": "[\n\t$0\n]\n"
+											"base_file": "${packages}/PHP Getters and Setters/Tab Context.sublime-menu",
+											"default": "[\n\t$0\n]\n"
 										}
 									},
 									{
@@ -103,9 +103,9 @@
 										"command": "z_edit_settings",
 										"args":
 										{
-											"file": "${packages}/PHP Getters and Setters/Main.sublime-menu",
 											"is_parent_setting": "1",
-											"contents": "[\n\t$0\n]\n"
+											"base_file": "${packages}/PHP Getters and Setters/Main.sublime-menu",
+											"default": "[\n\t$0\n]\n"
 										}
 									}
 								]
@@ -115,8 +115,8 @@
 								"command": "z_edit_settings",
 								"args":
 								{
-									"file": "${packages}/PHP Getters and Setters/Default.sublime-commands",
 									"is_parent_setting": "1",
+									"base_file": "${packages}/PHP Getters and Setters/Default.sublime-commands",
 									"default": "[\n\t$0\n]\n"
 								}
 							},
@@ -125,8 +125,8 @@
 								"command": "z_edit_settings",
 								"args":
 								{
-									"file": "${packages}/PHP Getters and Setters/user_templates.py",
 									"is_parent_setting": "1",
+									"base_file": "${packages}/PHP Getters and Setters/user_templates.py",
 									"default": "# User templates\n\n$0\n"
 								}
 							},
