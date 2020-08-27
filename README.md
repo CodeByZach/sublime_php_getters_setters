@@ -1,6 +1,6 @@
 PHP Getters and Setters
 =======================
-
+[![Latest Release](https://img.shields.io/github/tag/EatBreatheCode/sublime_php_getters_setters.svg?label=version)](https://github.com/EatBreatheCode/sublime_php_getters_setters/releases)
 
 With PHP Getters and Setters you can automatically generate _Getters_ and _Setters_ for your PHP classes.
 
