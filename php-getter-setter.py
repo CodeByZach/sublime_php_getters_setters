@@ -10,8 +10,6 @@ import sublime_plugin
 # )
 from .user_templates import *
 
-print('==== PHP Getters and Setters ====')
-
 def msg(msg):
 	print ("[PHP Getters and Setters] %s" % msg)
 
