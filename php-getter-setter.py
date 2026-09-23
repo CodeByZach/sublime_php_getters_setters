@@ -243,7 +243,7 @@ class DocBlock(object):
 		for line in lines:
 			line = line.strip(' \t*/').rstrip('.')
 			if line.startswith('@'):
-				nameMatches = re.findall('\@(\w+) (:?.*)[ ]?.*', line)
+				nameMatches = re.findall(r'\@(\w+) (:?.*)[ ]?.*', line)
 				if len(nameMatches) > 0:
 					name = nameMatches[0][0]
 					value = nameMatches[0][1]
@@ -265,8 +265,8 @@ class Parser(object):
 	"""
 	def __init__(self, content):
 		self.content = content
-		self.functionRegExp = ".*function.*%s\("
-		self.variableRegExp = '((?:private|public|protected)[ ]{0,}(?:final|static)?[ ]{0,}(?:\$.*?)[ |=|;].*)\n'
+		self.functionRegExp = r".*function.*%s\("
+		self.variableRegExp = '((?:private|public|protected)[ ]{0,}(?:final|static)?[ ]{0,}(?:\\$.*?)[ |=|;].*)\n'
 
 	def getContent(self):
 		return self.content
@@ -325,7 +325,7 @@ class Parser(object):
 		"""
 			Returns a Variable object populated from the parsed code
 		"""
-		nameMatches = re.findall('\$(.*?)[ |=|;]', line)
+		nameMatches = re.findall(r'\$(.*?)[ |=|;]', line)
 		name = "Unknown"
 		if len(nameMatches) >= 0:
 			name = nameMatches[0]
@@ -385,10 +385,10 @@ class Base(sublime_plugin.TextCommand):
 		pos = 0
 		lastPos = 1
 
-		pos = view.find('\{', 0)
+		pos = view.find(r'\{', 0)
 
 		while True:
-			pos = view.find('\}', pos.end())
+			pos = view.find(r'\}', pos.end())
 			if (pos.begin() == -1):
 				break
 			lastPos = pos.begin()
